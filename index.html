@@ -3,113 +3,114 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Patidar Travels - Archery Booking</title>
+    <title>Scan-Dash | Patidar Travels</title>
     <style>
-        body { font-family: 'Arial Black', sans-serif; background: #0f0c29; background: linear-gradient(to bottom, #24243e, #0f0c29); color: white; margin: 0; padding: 15px; display: flex; justify-content: center; min-height: 100vh; }
-        .game-card { background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); width: 100%; max-width: 400px; border-radius: 25px; border: 2px solid #ff00c1; overflow: hidden; box-shadow: 0 0 20px #ff00c1; }
+        body { font-family: 'Segoe UI', Tahoma, sans-serif; background: #000428; background: linear-gradient(to bottom, #004e92, #000428); color: white; margin: 0; padding: 15px; display: flex; justify-content: center; min-height: 100vh; }
+        .dash-card { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(12px); width: 100%; max-width: 400px; border-radius: 30px; border: 1px solid rgba(255, 255, 255, 0.2); overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,0.5); margin: auto; }
         
-        /* Gaming Header with your Bow and Target */
-        .header-assets { display: flex; justify-content: space-around; align-items: center; padding: 20px; background: rgba(0,0,0,0.3); }
-        .header-assets img { height: 60px; width: auto; }
+        /* Header Image Section */
+        .header-box { width: 100%; background: #fff; padding: 10px 0; text-align: center; }
+        .header-box img { max-width: 80%; height: auto; display: inline-block; }
+
+        .form-body { padding: 25px; }
+        h2 { text-align: center; color: #00d2ff; text-transform: uppercase; margin: 0; font-size: 22px; letter-spacing: 1px; }
+        .tagline { text-align: center; color: #aaa; font-size: 12px; margin-bottom: 25px; }
+
+        .input-group { margin-bottom: 15px; }
+        label { display: block; font-size: 10px; color: #00d2ff; margin-bottom: 5px; font-weight: bold; text-transform: uppercase; }
+        input { width: 100%; padding: 14px; background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 12px; color: white; font-size: 16px; box-sizing: border-box; outline: none; transition: 0.3s; }
+        input:focus { border-color: #00d2ff; background: rgba(255, 255, 255, 0.15); }
         
-        .content { padding: 20px; }
-        h2 { text-align: center; color: #00d2ff; text-transform: uppercase; margin: 0; font-size: 20px; text-shadow: 0 0 10px #00d2ff; }
-        .tagline { text-align: center; color: #ff00c1; font-size: 11px; margin-bottom: 20px; letter-spacing: 1px; }
-        
-        .input-group { margin-bottom: 12px; }
-        label { display: block; font-size: 10px; color: #00d2ff; margin-bottom: 5px; font-weight: bold; }
-        input { width: 100%; padding: 12px; background: rgba(0,0,0,0.6); border: 1px solid #ff00c1; border-radius: 10px; color: white; font-size: 16px; box-sizing: border-box; outline: none; }
-        
-        .row { display: flex; gap: 8px; }
-        .btn-book { background: linear-gradient(45deg, #ff00c1, #00d2ff); color: white; width: 100%; border: none; padding: 16px; border-radius: 15px; font-size: 18px; font-weight: bold; cursor: pointer; margin-top: 10px; text-transform: uppercase; box-shadow: 0 5px 15px rgba(255, 0, 193, 0.4); }
+        .row { display: flex; gap: 10px; }
+        .btn-dash { background: #00d2ff; background: linear-gradient(45deg, #00d2ff, #3a7bd5); color: white; width: 100%; border: none; padding: 18px; border-radius: 15px; font-size: 18px; font-weight: bold; cursor: pointer; margin-top: 15px; text-transform: uppercase; box-shadow: 0 10px 20px rgba(0, 210, 255, 0.3); }
+        .btn-dash:active { transform: scale(0.96); }
     </style>
 </head>
 <body>
 
-<div class="game-card">
-    <div class="header-assets">
-        <img src="bow.png" alt="Bow">
-        <img src="target.jpg" alt="Target" style="border-radius: 50%;">
+<div class="dash-card">
+    <div class="header-box">
+        <img src="poster.png" alt="Patidar Travels" onerror="this.parentElement.style.display='none'">
     </div>
 
-    <div class="content">
-        <h2>Patidar Tour & Travels</h2>
-        <p class="tagline">SCAN • PLAY • TRAVEL</p>
+    <div class="form-body">
+        <h2>Patidar Travels</h2>
+        <p class="tagline">SCAN-DASH | Fast Booking System</p>
         
         <div class="input-group">
-            <label>PLAYER / CUSTOMER NAME</label>
-            <input type="text" id="pName" placeholder="Enter Name">
+            <label>Customer Name</label>
+            <input type="text" id="name" placeholder="Enter Full Name">
         </div>
 
         <div class="row">
             <div class="input-group" style="flex:1.5;">
-                <label>MOBILE NO.</label>
-                <input type="tel" id="pMob" placeholder="Contact">
+                <label>WhatsApp No.</label>
+                <input type="tel" id="mob" placeholder="Contact No.">
             </div>
             <div class="input-group" style="flex:1;">
-                <label>SAWARI</label>
-                <input type="number" id="pQty" value="1">
+                <label>Sawari</label>
+                <input type="number" id="qty" value="1" min="1">
             </div>
         </div>
 
         <div class="row">
             <div class="input-group" style="flex:1;">
-                <label>FROM</label>
-                <input type="text" id="pFrom" placeholder="Source">
+                <label>From</label>
+                <input type="text" id="from" placeholder="Pickup City">
             </div>
             <div class="input-group" style="flex:1;">
-                <label>TO</label>
-                <input type="text" id="pTo" placeholder="Destination">
+                <label>To</label>
+                <input type="text" id="to" placeholder="Destination">
             </div>
         </div>
 
         <div class="row">
             <div class="input-group" style="flex:1;">
-                <label>PICKUP DATE</label>
-                <input type="date" id="pDate">
+                <label>Pickup Date</label>
+                <input type="date" id="date">
             </div>
             <div class="input-group" style="flex:1;">
-                <label>PICKUP TIME</label>
-                <input type="time" id="pTime">
+                <label>Pickup Time</label>
+                <input type="time" id="time">
             </div>
         </div>
 
-        <button class="btn-book" onclick="sendBooking()">Confirm Booking</button>
+        <button class="btn-dash" onclick="sendToWhatsApp()">Dash to WhatsApp</button>
     </div>
 </div>
 
 <script>
-    function sendBooking() {
-        var n = document.getElementById('pName').value;
-        var m = document.getElementById('pMob').value;
-        var q = document.getElementById('pQty').value;
-        var f = document.getElementById('pFrom').value;
-        var t = document.getElementById('pTo').value;
-        var d = document.getElementById('pDate').value;
-        var tm = document.getElementById('pTime').value;
+    function sendToWhatsApp() {
+        const n = document.getElementById('name').value;
+        const m = document.getElementById('mob').value;
+        const q = document.getElementById('qty').value;
+        const f = document.getElementById('from').value;
+        const t = document.getElementById('to').value;
+        const d = document.getElementById('date').value;
+        const tm = document.getElementById('time').value;
 
         if(!n || !m || !f || !t || !d || !tm) {
-            alert("Bhai, sari details bharna zaruri hai!");
+            alert("Bhai, sari details bharo!");
             return;
         }
 
-        var wpNumber = "916264296197"; 
+        const wpNumber = "916264296197"; 
 
-        var message = "🎯 *Patidar Travels - Archery Booking* 🎯\n" + 
-                      "━━━━━━━━━━━━━━━━━━━\n" + 
-                      "👤 *Player:* " + n + "\n" + 
-                      "📞 *Mobile:* " + m + "\n" + 
-                      "👥 *Sawari:* " + q + "\n" + 
-                      "📍 *Pickup:* " + f + "\n" + 
-                      "🏁 *Drop:* " + t + "\n" + 
-                      "📅 *Date:* " + d + "\n" + 
-                      "⏰ *Pickup Time:* " + tm + "\n" + 
-                      "━━━━━━━━━━━━━━━━━━━\n" + 
-                      "Sent from Luck Scan Web.";
+        const message = `*PATIDAR TRAVELS - SCAN DASH BOOKING*%0A` +
+                        `━━━━━━━━━━━━━━━━━━━%0A` +
+                        `👤 *Name:* ${n}%0A` +
+                        `📞 *Contact:* ${m}%0A` +
+                        `👥 *Sawari:* ${q}%0A` +
+                        `📍 *From:* ${f}%0A` +
+                        `🏁 *To:* ${t}%0A` +
+                        `📅 *Pickup Date:* ${d}%0A` +
+                        `⏰ *Pickup Time:* ${tm}%0A` +
+                        `━━━━━━━━━━━━━━━━━━━%0A` +
+                        `Kindly confirm this booking via Scan-Dash.`;
 
-        window.location.href = "https://api.whatsapp.com/send?phone=" + wpNumber + "&text=" + encodeURIComponent(message);
+        window.location.href = `https://api.whatsapp.com/send?phone=${wpNumber}&text=${message}`;
     }
 </script>
 
 </body>
-  </html>
+</html>
